@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>결과 수정하기</h1>
+
+    <form action ="{% url 'update' result.id %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <p>선물: <input type="file" name="image"></p>
+        <p>내용: <textarea name="body" cols="70" rows="70"></textarea></p>
+        <button type="submit">submit</button>
+        </form>
+</body>
+</html>

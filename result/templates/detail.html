@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>결과창</title>
+</head>
+    <img src="{{result.image.url}}" width="500" height="500" alt="안나와요" />
+    <br>
+    {{result.body}}
+    <br>
+    <button type="submit">공유하기</button>
+    <a href="{% url 'update' result.id %}"><input type="button" value="수정하기"></a>
+    <a href="{% url 'delete' result.id %}"><input type="button" value="삭제하기"></a>
+</body>
+</html>
