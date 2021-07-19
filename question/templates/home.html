@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>홈 화면</title>
+</head>
+<body>
+    <div class="header">
+        <a href="{% url 'home' %}"><strong>홈 화면</strong></a>
+        <a href="{% url 'create' %}">질문 만들기</a>
+    </div>
+    <div class="contents">
+    {% for question in questions %}
+        <h3>{{question.page}}번 문제</h3>
+        <p>{{question.que}}</p>
+        <p>answer1 : {{question.answer1}} </p>
+        <p>answer2 : {{question.answer2}} </p>
+        <a href="{% url 'detail' question.id %}">자세히보기</a>
+    {% endfor %}
+    </div>
+</body>
+</html>
