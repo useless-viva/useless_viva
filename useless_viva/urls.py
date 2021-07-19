@@ -19,8 +19,10 @@ from django.conf import settings
 from django.conf.urls.static import static
 from question import views as Q
 from result import views as R
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', Q.home, name='home'),
+    path('question/', include('question.urls')),
     path('result/', include('result.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
