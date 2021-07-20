@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>[ 문제 만들기 ]</h1>
-    <form method="POST" action="{% url 'create' %}">
+    <form method="POST" action="{% url 'question_create' %}">
         {% csrf_token %}
         <input name="que" type="text" placeholder="질문 내용을 입력하세요.">
         <br>

@@ -9,7 +9,7 @@
 <body>
     <div class="header">
         <a href="{% url 'home' %}"><strong>홈 화면</strong></a>
-        <a href="{% url 'create' %}">질문 만들기</a>
+        <a href="{% url 'question_create' %}">질문 만들기</a>
     </div>
     <div class="contents">
     {% for question in questions %}
@@ -17,7 +17,7 @@
         <p>{{question.que}}</p>
         <p>answer1 : {{question.answer1}} </p>
         <p>answer2 : {{question.answer2}} </p>
-        <a href="{% url 'detail' question.id %}">자세히보기</a>
+        <a href="{% url 'question_detail' question.id %}">자세히보기</a>
     {% endfor %}
     </div>
 </body>

@@ -8,7 +8,7 @@ def home(request):
 
 
 # 새 질문 만들기
-def make_question(request):
+def question_create(request):
     if request.method == 'POST':
         new_question = Question()
         new_question.que = request.POST['que']
@@ -21,12 +21,12 @@ def make_question(request):
         return render(request, 'new.html')
 
 
-def detail(request, id):
+def question_detail(request, id):
     question = get_object_or_404(Question, pk=id)
     return render(request, 'detail.html', {'question': question})
 
 
-def edit(request, id):
+def question_edit(request, id):
     if request.method == "POST":
         edit_question = Question.objects.get(pk=id)
         edit_question.que = request.POST['que']
@@ -34,13 +34,13 @@ def edit(request, id):
         edit_question.answer2 = request.POST['answer2']
         # edit_question.page = request.POST['page']
         edit_question.save()
-        return redirect('detail', edit_question.id)
+        return redirect('question_detail', edit_question.id)
     else:
         question = Question.objects.get(pk=id)
         return render(request, 'edit.html', {'question': question})
 
 
-def delete(request, id):
+def question_delete(request, id):
     delete_question = Question.objects.get(pk=id)
     delete_question.delete()
     return redirect('home')
