@@ -7,7 +7,7 @@
     <title>Edit</title>
 </head>
 <body>
-    <form method="POST" action="{% url 'edit' question.id %}">
+    <form method="POST" action="{% url 'question_edit' question.id %}">
         {% csrf_token %}
         <p>문제 번호: {{question.page}} </p>
         <p>문제: <input type="text" name="que" value="{{ question.que }}"></p>
