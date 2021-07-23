@@ -32,12 +32,12 @@ html, body {
 
 }
 .btn {
-    margin-top: 20px;
+    margin-top: 18px;
     margin-right: 120px;
     background: url( "present.png" ) no-repeat;
     border: none;
-    width: 251px;
-    height: 81px;
+    width: 204px;
+    height: 88px;
     cursor: pointer;
 }
 .content {
@@ -67,7 +67,7 @@ html, body {
     justify-content: center;
 }
 .image_box {
-    width: 760px;
+    width: 1000px;
     height: 100%;
     background-color: #75FBB4;
     border: black solid 5px;
@@ -80,7 +80,7 @@ html, body {
 .image_box > h1 {
     font-family: '국립박물관문화재단클래식B';
     margin: 20px;
-    font-size: 50px;
+    
 }
 .detail {
     margin-top: 30px;
@@ -90,10 +90,10 @@ html, body {
     
 }
 .detail_box {
-    width: 760px;
+    width: 800px;
     height: 100%;
-    background-color: #75FBB4;
-    border: black solid 5px;
+    /* background-color: white;
+    border: black solid 5px; */
     margin-top: 20px;
     display: flex;
     flex-direction: column;
@@ -103,8 +103,27 @@ html, body {
 }
 .detail_box > h1 {
     margin: 20px 10px;
+    font-size: 50px;
 }
 
 .detail_box > h2 {
     margin: 0px 10px;
+}
+.footer {
+    margin-top: 30px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.footer_box {
+    width: 95%;
+    height: 100%;
+    background-color: white;
+    border: black solid 5px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
 }
