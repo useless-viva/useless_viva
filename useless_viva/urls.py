@@ -23,6 +23,8 @@ from result import views as R
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', Q.home, name='home'),
+    path('choices/<int:pk>/', Q.choices, name='choices'),
     path('question/', include('question.urls')),
     path('result/', include('result.urls')),
+    path('account/', include('account.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

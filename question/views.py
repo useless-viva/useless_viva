@@ -1,10 +1,21 @@
+from django.http.request import HttpRequest
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import *
+from django.core.paginator import Paginator
+from django.http import HttpResponse
+from result.models import Result
+from account.models import User
 
 
 def home(request):
     questions = Question.objects.all()
-    return render(request, 'home.html', {'questions': questions})
+    paginator = Paginator(questions, 1)
+    page_number = request.GET.get('page')
+    page = paginator.get_page(page_number)
+
+    user_id = request.user.id
+    user = User.objects.get(id=user_id)
+    return render(request, 'home.html', {'questions': page})
 
 
 # 새 질문 만들기
@@ -13,7 +24,7 @@ def question_create(request):
         new_question = Question()
         new_question.que = request.POST['que']
         new_question.answer1 = request.POST['answer1']
-        new_question.answer2 = request.POST['answer1']
+        new_question.answer2 = request.POST['answer2']
         new_question.page = request.POST['page']
         new_question.save()
         return redirect('home')
@@ -43,4 +54,14 @@ def question_edit(request, id):
 def question_delete(request, id):
     delete_question = Question.objects.get(pk=id)
     delete_question.delete()
+    return redirect('home')
+
+
+def choices(request, pk):
+    choice = Result.objects.get(pk=pk)
+    selection = request.POST['btn']
+    # print(f'selection: {selection}')
+    choice.result += int(selection)
+    choice.save()
+
     return redirect('home')
