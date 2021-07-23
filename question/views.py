@@ -58,10 +58,9 @@ def question_delete(request, id):
 
 
 def choices(request, pk):
-    choice = Result.objects.get(pk=pk)
+    user = User.objects.get(pk=pk)
     selection = request.POST['btn']
-    # print(f'selection: {selection}')
-    choice.result += int(selection)
-    choice.save()
+    user.result += int(selection)
+    user.save()
 
     return redirect('home')
