@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'question',
     'result',
+    'account',
 ]
 
 MIDDLEWARE = [
@@ -116,6 +117,8 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# abstract 유저를 사용하기 위함.
+AUTH_USER_MODEL = 'account.User'
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/

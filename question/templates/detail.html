@@ -6,14 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
     <title>detail</title>
+    <script>
+        var result = 0
+        function button_click(value) {
+            var value = parseInt(value);
+            result += value;
+            test_result(result);
+            // alert(result + "을 누르셨습니다.");
+        }
+        function test_result(val) {
+            var result = val;
+            alert(result);
+        }
+    </script>
 </head>
 <body>
     <h3>{{question.page}}번 문제</h3>
     <p>{{question.que}}</p>
-    <button>answer1 : {{question.answer1}}</button>
-    <button>answer2 : {{question.answer2}}</button>
-    <!-- <button onClick="left_button()">answer1 : {{question.answer1}} </button> -->
-    <!-- <button onClick="right_button()">answer2 : {{question.answer2}} </button> -->
+    <button id="btn" onclick="button_click(this.value);" value='1'>answer1 : {{question.answer1}}</button>
+    <button id="btn" onclick="button_click(this.value);" value='2'>answer2 : {{question.answer2}}</button>
+    <!-- <button id="btn" value="0" onclick="cnt(this.value)">answer2 : {{question.answer2}}</button> -->
     <br>
     <a href="{% url 'question_edit' question.id %}">
         <button>수정</button>
@@ -21,6 +33,6 @@
     <a href="{% url 'question_delete' question.id %}">
         <button>삭제</button>
     </a>
-    <script type="text/javascript" src="test.js"></script>
+    <!-- <script type="text/javascript" src="./test.js"></script> -->
 </body>
 </html>
