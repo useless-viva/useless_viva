@@ -61,12 +61,22 @@ def choices(request):
     paginator = Paginator(questions, 1)
     page_number = request.GET.get('page') or 1
     page = paginator.get_page(page_number)
-
+    print(page)
     # 유저 정보 가져오기
     user_id = request.user.id
     user = User.objects.get(id=user_id)
-    selection = request.POST['test2']
-    user.result += int(selection)
+    if int(page_number) <=3:
+        selectionIE = request.POST['test2']
+        user.result1 += int(selectionIE)
+    elif int(page_number) <=6:
+        selectionSN = request.POST['test2']
+        user.result2 += int(selectionSN)
+    elif int(page_number) <=9:
+        selectionFT = request.POST['test2']
+        user.result3 += int(selectionFT)
+    else:
+        selectionPJ = request.POST['test2']
+        user.result4 += int(selectionPJ)
     user.save()
     # cnt = questions.count()
     # return redirect('home')
