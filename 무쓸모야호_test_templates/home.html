@@ -4,23 +4,58 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="css/home.css">
     <title>home</title>
+    <style>
+		.go {
+			cursor: pointer;
+			-webkit-transition-duration: 0.4s;
+			transition-duration: 0.4s;
+            display: flex;
+            justify-content: center;
+            font-family: '국립박물관문화재단클래식B';
+            font-size: 50px;
+            font-weight: 700;
+            color: #363636;
+            text-shadow: 3px 4px  #f7cd7493;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            padding-left: 60px;
+            padding-right: 60px;
+            background-color: #B2ACA7;
+            border-radius: 55px;
+            border: 4px solid black;
+            width: 400px;
+            position: relative;
+            margin-top: -7px;
+            margin-bottom: 50px;
+		}
+		.btn2:hover { box-shadow:0 8px 20px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(250, 168, 92, 0.336); }
+	</style>
 </head>
+
 <body>
-    <div class="container">
-        <div class="header">
-            <a href="home.html"><img id="logo" src="logo.png" height="120px" width="120px"></a>
-            <div class="viva"><a href="#"><img src="viva.png" width="340px" height="70px"></a></div>
-            <a href="home.html"><button class="btn"></button></a>
+<div class="container">
+    <div class="header">
+        <a href="home.html"><img id="logo" src="logo/logo.png" height="115px" width="110px"></a>
+        <div class="viva"><a href="home.html"><img src="logo/viva.png" width="340px" height="70px"></a></div>
+        <a href="home.html"><button class="btn"></button></a>
+    </div>
+    <div class="main">
+        <img class="content" src="logo/main.png">
+        <div class="go_button">
+            <a href="question1.html"><span class="go btn2">추천 받으러 가기</span></a>
         </div>
-        <div class="content">
-            <div class="title">
-                <a href="question.html"><img src="home.png" id="top-img"></a>
-            </div>
+    </div>
+    <div class="footer">
+        <div class="footer_box">
+            <a href="home.html"><img src="logo/viva.png" width="200px"></a>
+            <h3>Developers : </h3>
+            <p>Front-End :: [윤현지 - github.com/Younhyeonji]  [이민수 - github.com/mslee5240]</p>
+            <p>Back-End :: [정은서 - github.com/eunseoJeong]  [배연주 - github.com/kiteB]</p>
             
         </div>
     </div>
-    
+</div>
 </body>
 </html>
