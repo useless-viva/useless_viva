@@ -8,12 +8,12 @@ from account.models import User
 
 
 def home(request):
-    questions = Question.objects.all()
-    paginator = Paginator(questions, 1)
-    page_number = request.GET.get('page')
-    page = paginator.get_page(page_number)
+    # User 생성
+    new_user = User()
+    new_user.save()
+    print(new_user.id)
 
-    return render(request, 'home.html', {'questions': page})
+    return render(request, 'home.html', {'user_id': new_user.id})
 
 
 # 새 질문 만들기
@@ -55,16 +55,16 @@ def question_delete(request, id):
     return redirect('home')
 
 
-def choices(request):
+def choices(request, pk):
     # 객체 불러오기
     questions = Question.objects.all()
     paginator = Paginator(questions, 1)
     page_number = request.GET.get('page') or 1
     page = paginator.get_page(page_number)
-    print(page)
+
     # 유저 정보 가져오기
-    user_id = request.user.id
-    user = User.objects.get(id=user_id)
+    user = User.objects.get(pk=pk)
+
     if int(page_number) <=3:
         selectionIE = request.POST['test2']
         user.result1 += int(selectionIE)
@@ -78,7 +78,6 @@ def choices(request):
         selectionPJ = request.POST['test2']
         user.result4 += int(selectionPJ)
     user.save()
-    # cnt = questions.count()
-    # return redirect('home')
+
     if int(page_number) <= questions.count():
-        return render(request, 'choices.html', {'questions': page})
+        return render(request, 'choices.html', {'questions': page, 'user_id': user.id})

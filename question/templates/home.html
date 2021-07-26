@@ -10,32 +10,12 @@
     <div class="header">
         <a href="{% url 'home' %}"><strong>홈 화면</strong></a>
         <a href="{% url 'question_create' %}">질문 만들기</a>
-        <a href="{% url 'signup' %}">회원가입</a>
-        <a href="{% url 'login' %}">로그인</a>
-        <a href="{% url 'logout' %}">로그아웃</a>
     </div>
     <div class="contents">
-        <form action="/choices/?page=1" method="POST">
+        <form action="/choices/{{user_id}}/?page=1" method="POST">
             {% csrf_token%}
-            <!-- <button>시작하기</button> -->
             <button name="test2" value="1">시작하기</button>
         </form>
-    <!-- <script type="text/javascript" src="static\js\question.js"></script> -->
-        <br>
-        <!-- 이전 페이지가 있을 시, 이전 페이지 이동 -->
-        <!-- {% if questions.has_previous %} -->
-            <!-- <a href="?page={{questions.previous_page_number}}"> < </a> -->
-        <!-- {% endif %} -->
-
-        <!-- 현재 페이지 / 전체 페이지 -->
-        <!-- <span><strong>{{questions.number}}</strong></span> -->
-        <!-- <span>/</span> -->
-        <!-- <span>{{questions.paginator.num_pages}}</span> -->
-
-        <!-- 다음 페이지가 있을 시, 다음 페이지 이동 -->
-        <!-- {% if questions.has_next %} -->
-            <!-- <a href="?page={{questions.next_page_number}}"> > </a> -->
-        <!-- {% endif %} -->
     </div>
 </body>
 </html>

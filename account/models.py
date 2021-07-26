@@ -1,9 +1,9 @@
 from django.db import models
-from django.contrib.auth.models import AbstractUser
 
 
-class User(AbstractUser):
-    nickname = models.CharField(max_length=50)
+class User(models.Model):
+    username = models.CharField(max_length=50)
+    result = models.CharField(max_length=50)
     result1 = models.IntegerField(default=0)
     result2 = models.IntegerField(default=0)
     result3 = models.IntegerField(default=0)
