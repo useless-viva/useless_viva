@@ -13,8 +13,6 @@ def home(request):
     page_number = request.GET.get('page')
     page = paginator.get_page(page_number)
 
-    user_id = request.user.id
-    user = User.objects.get(id=user_id)
     return render(request, 'home.html', {'questions': page})
 
 
@@ -57,10 +55,20 @@ def question_delete(request, id):
     return redirect('home')
 
 
-def choices(request, pk):
-    user = User.objects.get(pk=pk)
-    selection = request.POST['btn']
+def choices(request):
+    # 객체 불러오기
+    questions = Question.objects.all()
+    paginator = Paginator(questions, 1)
+    page_number = request.GET.get('page') or 1
+    page = paginator.get_page(page_number)
+
+    # 유저 정보 가져오기
+    user_id = request.user.id
+    user = User.objects.get(id=user_id)
+    selection = request.POST['test2']
     user.result += int(selection)
     user.save()
-
-    return redirect('home')
+    # cnt = questions.count()
+    # return redirect('home')
+    if int(page_number) <= questions.count():
+        return render(request, 'choices.html', {'questions': page})
