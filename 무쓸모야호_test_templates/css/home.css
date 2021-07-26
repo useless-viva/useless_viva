@@ -30,19 +30,13 @@ html, body {
 #logo {
     margin-left: 200px;
 }
+#present {
+    margin-top: 18px;
+    margin-right: 120px;
+}
 
 .viva {
     margin-top: 28px;
-}
-
-.btn {
-    margin-top: 18px;
-    margin-right: 120px;
-    background: url( "/logo/present.png" ) no-repeat;
-    border: none;
-    width: 204px;
-    height: 88px;
-    cursor: pointer;
 }
 
 .content {
@@ -88,8 +82,4 @@ a {
     flex-direction: column;
     text-align: center;
     justify-content: center;
-}
-
-.test {
-    text-align: center;
 }
