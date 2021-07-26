@@ -15,37 +15,27 @@
         <a href="{% url 'logout' %}">로그아웃</a>
     </div>
     <div class="contents">
-    {% for question in questions %}
-        <h1>{{question.id}}</h1>
-        <h3>{{question.page}}번 문제</h3>
-        <p>{{question.que}}</p>
-        <h1>user.id : {{user.id}}</h1>
-        
-        <form action="/choices/{{user.id}}/" method="post">
+        <form action="/choices/?page=1" method="POST">
             {% csrf_token%}
-            <button name="btn" value="1">예</button>
-            <button name="btn" value="2">아니요</button>
+            <!-- <button>시작하기</button> -->
+            <button name="test2" value="1">시작하기</button>
         </form>
-        
-        <a href="{% url 'question_detail' question.id %}">자세히보기</a>
-    {% endfor %}
-    <br>
-    <input id="out" type="text" readonly="readonly">
-    </div>
-    <!-- 이전 페이지가 있을 시, 이전 페이지 이동 -->
-    {% if questions.has_previous %}
-        <a href="?page={{questions.previous_page_number}}"> < </a>
-    {% endif %}
-
-    <!-- 현재 페이지 / 전체 페이지 -->
-    <span><strong>{{questions.number}}</strong></span>
-    <span>/</span>
-    <span>{{questions.paginator.num_pages}}</span>
-
-    <!-- 다음 페이지가 있을 시, 다음 페이지 이동 -->
-    {% if questions.has_next %}
-        <a href="?page={{questions.next_page_number}}"> > </a>
-    {% endif %}
     <!-- <script type="text/javascript" src="static\js\question.js"></script> -->
+        <br>
+        <!-- 이전 페이지가 있을 시, 이전 페이지 이동 -->
+        <!-- {% if questions.has_previous %} -->
+            <!-- <a href="?page={{questions.previous_page_number}}"> < </a> -->
+        <!-- {% endif %} -->
+
+        <!-- 현재 페이지 / 전체 페이지 -->
+        <!-- <span><strong>{{questions.number}}</strong></span> -->
+        <!-- <span>/</span> -->
+        <!-- <span>{{questions.paginator.num_pages}}</span> -->
+
+        <!-- 다음 페이지가 있을 시, 다음 페이지 이동 -->
+        <!-- {% if questions.has_next %} -->
+            <!-- <a href="?page={{questions.next_page_number}}"> > </a> -->
+        <!-- {% endif %} -->
+    </div>
 </body>
 </html>
