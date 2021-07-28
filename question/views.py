@@ -101,9 +101,14 @@ def choices(request, pk):
         mbti.append("P")
     user.result = ''.join(mbti)
     user.save()
-
+    print(user.result)
     if int(page_number) <= questions.count():
         return render(request, 'choices.html', {'questions': page, 'user_id': user.id})
 
 
-    
+def results(request, pk):
+    user = User.objects.get(pk=pk)
+    if user.result == 'ISTP':
+        return render(request, 'result.html', {'user': user})
+    else:
+        return render(request, 'result2.html', {'user': user})
