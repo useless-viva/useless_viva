@@ -4,7 +4,7 @@ from .models import *
 # Create your views here.
 def detail(request, id):
     result = get_object_or_404(Result, pk = id)
-    return render(request, 'detail.html', {'result':result})
+    return render(request, 'result_detail.html', {'result':result})
 
 def make_post(request):
     if request.method == "POST":
@@ -14,7 +14,7 @@ def make_post(request):
         new_result.save()
         return redirect('home')
     else:
-        return render(request, 'new.html')
+        return render(request, 'post.html')
 
 def update(request, id):
     if request.method == 'POST':
@@ -25,7 +25,7 @@ def update(request, id):
         return redirect('detail', update_result.id)
     else:
         result = Result.objects.get(id=id)
-        return render(request, 'edit.html', {'result':result})
+        return render(request, 'result_edit.html', {'result':result})
 
 def delete(request, id):
     delete_result = Result.objects.get(id = id)
