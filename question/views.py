@@ -61,23 +61,49 @@ def choices(request, pk):
     paginator = Paginator(questions, 1)
     page_number = request.GET.get('page') or 1
     page = paginator.get_page(page_number)
-
+    ## 점수계산
     # 유저 정보 가져오기
     user = User.objects.get(pk=pk)
 
-    if int(page_number) <=3:
+    if int(page_number) <=4:
         selectionIE = request.POST['test2']
         user.result1 += int(selectionIE)
-    elif int(page_number) <=6:
+    elif int(page_number) <=7:
         selectionSN = request.POST['test2']
         user.result2 += int(selectionSN)
-    elif int(page_number) <=9:
+    elif int(page_number) <=10:
         selectionFT = request.POST['test2']
         user.result3 += int(selectionFT)
     else:
         selectionPJ = request.POST['test2']
         user.result4 += int(selectionPJ)
     user.save()
+    ## 유형판단
+    # 빈리스트 생성
+    mbti = []
+    # 유저 정보 가져오기
+    user = User.objects.get(pk=pk)
+    if user.result1 <=5:
+        mbti.append("E")
+    else :
+        mbti.append("I")
+    if user.result2 <=4:
+        mbti.append("N")
+    else :
+        mbti.append("S")
+    if user.result3 <=4:
+        mbti.append("F")
+    else :
+        mbti.append("T")
+    if user.result4 <=4:
+        mbti.append("J")
+    else :
+        mbti.append("P")
+    user.result = ''.join(mbti)
+    user.save()
 
     if int(page_number) <= questions.count():
         return render(request, 'choices.html', {'questions': page, 'user_id': user.id})
+
+
+    
