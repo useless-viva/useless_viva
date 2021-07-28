@@ -1,0 +1,85 @@
+@font-face {
+    font-family: '국립박물관문화재단클래식B';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/국립박물관문화재단클래식B.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}   
+
+html, body { 
+    width:100%; 
+    height:100%;
+    background-color: #F7F8E8;
+}
+
+.container {
+    height: 100%;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #CBC2B9;
+    height: 120px;
+}
+
+#logo {
+    margin-left: 200px;
+}
+#present {
+    margin-top: 18px;
+    margin-right: 120px;
+}
+
+.viva {
+    margin-top: 28px;
+}
+
+.content {
+    width: 100%;
+    height: 100%;
+}
+
+/* 기본, 버튼 태그 끝 */
+
+.main {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    height: 75%;
+}
+
+.go_button {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+    color: #212121;
+}
+
+.footer {
+    margin-top: 150px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.footer_box {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    color: white;
+    border: white solid 3px;
+    margin: 20px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
