@@ -25,6 +25,7 @@ urlpatterns = [
     path('', Q.home, name='home'),
     # path('choices/', Q.choices, name='choices'),
     path('choices/<int:pk>/', Q.choices, name='choices'),
+    path('results/<int:pk>/', Q.results, name='results'),    
     path('question/', include('question.urls')),
     path('result/', include('result.urls')),
     path('account/', include('account.urls')),
