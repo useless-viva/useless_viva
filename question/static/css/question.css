@@ -219,3 +219,6 @@ button {
     font-family: 'GongGothicLight';
     font-size: 32px;
 }
+#result_page {
+    display: none;
+}
