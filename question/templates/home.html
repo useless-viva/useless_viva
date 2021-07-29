@@ -12,17 +12,10 @@
 <div class="main">
     <img class="content" src="{% static 'image/main.png' %}">
     <div class="go_button">
-        <a href="question1.html"><span class="go btn2">추천 받으러 가기</span></a>
+        <form action="/choices/{{user_id}}/?page=1" method="POST">
+            {% csrf_token%}
+            <button name="test2" value="1" class="go btn22">추천 받으러 가기</button>
+        </form>
     </div>
 </div>
 {% endblock content %}
-<div class="header">
-    <a href="{% url 'home' %}"><strong>홈 화면</strong></a>
-    <a href="{% url 'question_create' %}">질문 만들기</a>
-</div>
-<div class="contents">
-    <form action="/choices/{{user_id}}/?page=1" method="POST">
-        {% csrf_token%}
-        <button name="test2" value="1">시작하기</button>
-    </form>
-</div>
