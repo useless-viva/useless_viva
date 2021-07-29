@@ -1,21 +1,42 @@
-{% extends 'base.html' %}
 {% load static %}
-{% block javascript %}
-<script language="javascript">
-    function Popup() { window.open("popup.html",  "a", "width=80, height=50, left=0, top=190, location=no,history=no,resizable=no,status=no,scrollbars=no,menubar=no,toolbar=no"); }
-</script>
-{% endblock javascript %}
-{% block css %}{% static 'css/home.css' %}{% endblock css%}
-{% block title %}Home{% endblock title %}
-{% block popup %}onload="javascript:Popup()"{% endblock popup %}
-{% block content %}
-<div class="main">
-    <img class="content" src="{% static 'image/main.png' %}">
-    <div class="go_button">
-        <form action="/choices/{{user_id}}/?page=1" method="POST">
-            {% csrf_token%}
-            <button name="test2" value="1" class="go btn22">추천 받으러 가기</button>
-        </form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script language="javascript">
+        function Popup() { window.open("{% url 'popup' %}",  "a", "width=80, height=50, left=0, top=190, location=no,history=no,resizable=no,status=no,scrollbars=no,menubar=no,toolbar=no"); }
+    </script>
+    <link rel="stylesheet" href="static/css/home.css">
+    <title>Home</title>
+</head>
+<body onload="javascript:Popup()">
+    <div class="container">
+        <div class="header">
+            <a href="home.html"><img id="logo" src="{% static 'image/logo.png' %}" height="115px" width="110px"></a>
+            <div class="viva"><a href="home.html"><img src="{% static 'image/viva.png' %}" width="340px" height="70px"></a></div>
+            <a href="home.html"><img id="present" src="{% static 'image/present.png' %}"></a>
+        </div>
+
+        <div class="main">
+            <img class="content" src="{% static 'image/main.png' %}">
+            <div class="go_button">
+                <form action="/choices/{{user_id}}/?page=1" method="POST">
+                    {% csrf_token%}
+                    <button name="test2" value="1" class="go btn22">추천 받으러 가기</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <div class="footer_box">
+                <a href="home.html"><img src="{% static 'image/viva.png' %}" width="200px"></a>
+                <h3>Developers : </h3>
+                <p>Front-End :: [윤현지 - github.com/Younhyeonji]  [이민수 - github.com/mslee5240]</p>
+                <p>Back-End :: [정은서 - github.com/eunseoJeong]  [배연주 - github.com/kiteB]</p>
+            </div>
+        </div>
     </div>
-</div>
-{% endblock content %}
+</body>
+</html>
