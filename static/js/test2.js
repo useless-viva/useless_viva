@@ -1,13 +1,13 @@
-$("#btn2").click(function () {
+$("#answer-btn2").click(function () {
     // #result의 display가 "none"일 경우 (접혀있는 경우)
-    if ($("#result").css("display") == "none") {
-        // #more 버튼 감추기
-        $("#btn").hide();
-        $("#btn2").hide();
-        // #result 보이기
-        $("#result").show();
-    } else {
-        // #result의 display가 "block"인 경우 (펼쳐져 있는 경우)
-        $("#btn2").show();
+    if ($("#result_page").css("display") == "none") {
+        // 감추기
+        $(".num").hide();
+        $(".que").hide();
+        $(".box").hide();
+        $(".box_ddu").hide();
+        $("#page_info").hide();
+        // #result_page 보이기
+        $("#result_page").show();
     }
 });
