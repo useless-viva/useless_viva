@@ -108,7 +108,35 @@ def choices(request, pk):
 
 def results(request, pk):
     user = User.objects.get(pk=pk)
-    if user.result == 'ISTP':
-        return render(request, 'result.html', {'user': user})
-    else:
+    if user.result == 'ENFP':
+        return render(request, 'result1.html', {'user': user})
+    elif user.result == 'ENTP':
         return render(request, 'result2.html', {'user': user})
+    elif user.result == 'ENTJ':
+        return render(request, 'result3.html', {'user': user})
+    elif user.result == 'ENFJ':
+        return render(request, 'result4.html', {'user': user})
+    elif user.result == 'ESFP':
+        return render(request, 'result5.html', {'user': user})
+    elif user.result == 'ESTP':
+        return render(request, 'result6.html', {'user': user})
+    elif user.result == 'ESTJ':
+        return render(request, 'result7.html', {'user': user})
+    elif user.result == 'ESFJ':
+        return render(request, 'result8.html', {'user': user})
+    elif user.result == 'INFP':
+        return render(request, 'result9.html', {'user': user})
+    elif user.result == 'INTP':
+        return render(request, 'result10.html', {'user': user})
+    elif user.result == 'INTJ':
+        return render(request, 'result11.html', {'user': user})
+    elif user.result == 'INFJ':
+        return render(request, 'result12.html', {'user': user})
+    elif user.result == 'ISFP':
+        return render(request, 'result13.html', {'user': user})
+    elif user.result == 'ISTP':
+        return render(request, 'result14.html', {'user': user})
+    elif user.result == 'ISTJ':
+        return render(request, 'result15.html', {'user': user})
+    elif user.result == 'ISFJ':
+        return render(request, 'result16.html', {'user': user})
