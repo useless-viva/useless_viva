@@ -32,4 +32,6 @@
 - JavaScript
 <br>
 
-## Django ORM
+## Django UML
+![image](https://user-images.githubusercontent.com/80669355/127546987-ccfa3799-acfe-4089-961b-d40334dbfac7.png)
+
