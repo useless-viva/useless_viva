@@ -120,7 +120,9 @@ html, body {
     width: 850px;
     height: 370px;
 }
-
+form {
+    display: flex;
+}
 .questions {
     display: flex;
     justify-content: space-around;
@@ -130,6 +132,10 @@ html, body {
 }
 
 .q {
+    display: flex;
+    flex-direction: column-reverse;
+    /* align-items: center; */
+    justify-content: flex-end;
     border: 5px solid #FF9D00;
     border-radius: 40px;
     background-color: #FFFFFF;
@@ -149,14 +155,15 @@ html, body {
     display: flex;
     justify-content: center;
     font-family: 'GongGothicLight';
-    font-size: 32px;
+    font-size: 30px;
     text-align: center;
-    padding: 30px;
+    padding: 16px;
 }
 
 .moo {
     display: flex;
     justify-content: center;
+    margin-top: 20px;
 }
 
 .sun {
@@ -173,7 +180,9 @@ html, body {
     height: 85px;
     display: flex;
     justify-content: space-around;
+    font-family: 'GongGothicLight';
     padding-top: 35px;
+    font-size: 38px;
 }
 
 .much {
@@ -202,4 +211,11 @@ html, body {
     flex-direction: column;
     text-align: center;
     justify-content: center;
+}
+button {
+    border: 0;
+    outline: 0;
+    background-color: white;
+    font-family: 'GongGothicLight';
+    font-size: 32px;
 }

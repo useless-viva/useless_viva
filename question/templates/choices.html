@@ -1,59 +1,103 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="http://code.jquery.com/jquery-latest.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-    <link rel="stylesheet" href="/static/css/test.css">
-    <title>홈 화면</title>
-    <script>
-        function link() {
-            setTimeout(function() {
-                location.href="/choices/{{user_id}}/?page={{questions.number}}";
-            }, 2000);
-        }
-    </script>   
-</head>
-<body>
-    <div class="contents">
-        {% for question in questions %}
-            <!-- 문제번호     -->
-            <h1>{{question.id}}</h1>
-            <!-- or <h3>{{question.page}}</h3> -->
-            
-            <!-- 문제 -->
-            <p>{{question.que}}</p>
+{% extends 'base.html' %}
+{% load static %}
+{% block javascript %}
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script>
+    function link() {
+        setTimeout(function() {
+            location.href="/choices/{{user_id}}/?page={{questions.number}}";
+        }, 2000);
+    }
+</script>  
+<script type="text/javascript" src="/static/js/test.js"></script>
+<script type="text/javascript" src="/static/js/test2.js"></script>
+{% endblock javascript %}
+{% block css %}{% static '/css/question.css' %}{% endblock css%}
+{% block title %}Question{% endblock title %}
 
-            <!-- 답변 -->
-            {% if questions.has_next %}
-                <form action="/choices/{{user_id}}/?page={{questions.next_page_number}}" method="POST">
-                    {% csrf_token %}
-                    <button name="test2" value="1">{{question.answer1}}</button>
-                    <button name="test2" value="2">{{question.answer2}}</button>
-                </form>
-            {% else %}
-                <!-- 맨마지막 문항 -->
-                <div class="answer">
-                    <form action="javascript:link()" method="POST">
-                        {% csrf_token %}
-                        <button id="btn" name="test2" value="1">{{question.answer1}}</button>
-                        <button id="btn2" name="test2" value="2">{{question.answer2}}</button>
-                    </form>
-                </div>
-                <!-- 결과 보러가기 -->
-                <div id="result_page">
-                    <a href="/results/{{user_id}}">
-                        <button id="result">결과보러 가기</button>
-                    </a>
-                </div>
-            {% endif %}
-        {% endfor %}
-        <p>{{questions.number}}/{{questions.paginator.num_pages}}</p>
+{% block content %}
+<div class="main">
+    {% for question in questions %}
+    <div class="num">
+        <span class="number">{{question.id}}</span>
     </div>
-    <script type="text/javascript" src="/static/js/test.js"></script>
-    <script type="text/javascript" src="/static/js/test2.js"></script>
-</body>
+    <div class="que">
+        <span class="question">{{question.que}}</span>
+    </div>
+    <div class="ques">
+        <div class="box_ddu">
+            <span class="ddu_text">쓸모없는 선물 추천</span>
+        </div>
+        {% if questions.has_next %}
+        <div class="box">
+            <form action="/choices/{{user_id}}/?page={{questions.next_page_number}}" method="POST">
+                {% csrf_token %}
+                <div class="questions">
+                    <div class="q btn2">
+                        <div class="in">
+                            <button name="test2" value="1"><span>{{question.answer1}}</span></button><br>
+                        </div>
+                        <div class="moo">
+                            <button name="test2" value="1"><img class="icon" src="{% static 'image/moo.png' %}" width="55px" height="55px"></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="sun">
+                    <span> </span>
+                </div>
+                <div class="questions">
+                    <div class="q btn2">
+                        <div class="in">
+                            <button name="test2" value="2"><span>{{question.answer2}}</span></button><br>
+                        </div>
+                        <div class="moo">
+                            <button name="test2" value="2"><img class="icon" src="{% static 'image/moo.png' %}" width="55px" height="55px"></button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            {% else %}
+            <form action="javascript:link()" method="POST">
+                {% csrf_token %}
+                <div class="questions">
+                    <div class="q btn2">
+
+                        <div class="moo">
+                            <button name="test2" value="1"><img class="icon" src="{% static 'image/moo.png' %}" width="55px" height="55px"></button>
+                        </div>
+                        <div class="in">
+                            <button name="test2" value="1"><span>{{question.answer1}}</span></button><br>
+                        </div>
+                    </div>
+                </div>
+                <div class="questions">
+                    <div class="q btn2">
+
+                        <div class="moo">
+                            <a name="test2" value="2"><img class="icon" src="{% static 'image/moo.png' %}" width="55px" height="55px"></a>
+                        </div>
+                        <div class="in">
+                            <a name="test2" value="2"><span>{{question.answer2}}</span></a><br>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div id="result_page">
+                <a href="/results/{{user_id}}">
+                    <button id="result">결과보러 가기</button>
+                </a>
+            </div>
+            {% endif %}
+            {% endfor %}
+            <!-- <p>{{questions.number}}/{{questions.paginator.num_pages}}</p> -->
+        </div>
+    </div>
+</div>
+<div class="remainder">
+    <!-- <span class="much">선물을 추천 받기까지 11문항이 남았습니다</span> -->
+    <p>{{questions.number}}/{{questions.paginator.num_pages}}</p>    
+</div>
+{% endblock content %}
 </html>
