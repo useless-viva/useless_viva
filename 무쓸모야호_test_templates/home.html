@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/home.css">
     <title>home</title>
+    <script language="javascript">
+        function Popup() { window.open("popup.html",  "a", "width=80, height=50, left=0, top=190, location=no,history=no,resizable=no,status=no,scrollbars=no,menubar=no,toolbar=no"); }
+        </script>
     <style>
 		.go {
 			cursor: pointer;
@@ -34,7 +37,7 @@
 	</style>
 </head>
 
-<body>
+<body onload="javascript:Popup()">
 <div class="container">
     <div class="header">
         <a href="home.html"><img id="logo" src="logo/logo.png" height="115px" width="110px"></a>

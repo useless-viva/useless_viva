@@ -106,6 +106,8 @@ html, body {
     transform: rotate(-55deg);
     width: 400px;
     height: 50px;
+    margin-top: 138px;
+    margin-right: -120px;
 }
 
 .box {
@@ -137,8 +139,10 @@ html, body {
     padding-left: 20px;
     padding-right: 20px;
     padding-bottom: 10px;
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 35px;
+    margin-right: 35px;
+    margin-top:-20px;
+    cursor: pointer;
 }
 
 .in {
@@ -177,12 +181,7 @@ html, body {
     font-size: 38px;
 }
 
-.move_button {
-    font-family: 'GongGothicLight';
-    font-size: 38px;
-    text-decoration: none;
-    color: #212121;
-}
+/* 푸터 */
 
 .footer {
     margin-top: 20px;
