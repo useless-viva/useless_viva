@@ -1,0 +1,111 @@
+@font-face {
+    font-family: '국립박물관문화재단클래식B';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/국립박물관문화재단클래식B.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}   
+
+html, body { 
+    width:100%; 
+    height:100%;
+    background-color: #F7F8E8;
+}
+
+.container {
+    height: 100%;
+}
+
+.go {
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    display: flex;
+    justify-content: center;
+    font-family: '국립박물관문화재단클래식B';
+    font-size: 50px;
+    font-weight: 700;
+    color: #363636;
+    text-shadow: 3px 4px  #f7cd7493;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 60px;
+    padding-right: 60px;
+    background-color: #B2ACA7;
+    border-radius: 55px;
+    border: 4px solid black;
+    width: 600px;
+    position: relative;
+    margin-top: -7px;
+    margin-bottom: 50px;
+}
+.btn22:hover 
+{ box-shadow:0 8px 20px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(250, 168, 92, 0.336); }
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #CBC2B9;
+    height: 120px;
+}
+
+#logo {
+    margin-left: 200px;
+}
+#present {
+    margin-top: 18px;
+    margin-right: 120px;
+}
+
+.viva {
+    margin-top: 28px;
+}
+
+.content {
+    width: 100%;
+    height: 100%;
+}
+
+/* 기본, 버튼 태그 끝 */
+
+.main {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    height: 75%;
+}
+
+.go_button {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+    color: #212121;
+}
+
+.footer {
+    margin-top: 150px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.footer_box {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    color: white;
+    border: white solid 3px;
+    margin: 20px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}

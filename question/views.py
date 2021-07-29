@@ -140,3 +140,7 @@ def results(request, pk):
         return render(request, 'result15.html', {'user': user})
     elif user.result == 'ISFJ':
         return render(request, 'result16.html', {'user': user})
+
+
+def popup(request):
+    return render(request, 'popup.html')
