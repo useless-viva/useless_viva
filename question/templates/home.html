@@ -1,21 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>홈 화면</title>
-</head>
-<body>
-    <div class="header">
-        <a href="{% url 'home' %}"><strong>홈 화면</strong></a>
-        <a href="{% url 'question_create' %}">질문 만들기</a>
+{% extends 'base.html' %}
+{% load static %}
+{% block javascript %}
+<script language="javascript">
+    function Popup() { window.open("popup.html",  "a", "width=80, height=50, left=0, top=190, location=no,history=no,resizable=no,status=no,scrollbars=no,menubar=no,toolbar=no"); }
+</script>
+{% endblock javascript %}
+{% block title %}Home{% endblock title %}
+{% block popup %}onload="javascript:Popup()"{% endblock popup %}
+{% block content %}
+<div class="main">
+    <img class="content" src="logo/main.png">
+    <div class="go_button">
+        <a href="question1.html"><span class="go btn2">추천 받으러 가기</span></a>
     </div>
-    <div class="contents">
-        <form action="/choices/{{user_id}}/?page=1" method="POST">
-            {% csrf_token%}
-            <button name="test2" value="1">시작하기</button>
-        </form>
-    </div>
-</body>
-</html>
+</div>
+<div class="header">
+    <a href="{% url 'home' %}"><strong>홈 화면</strong></a>
+    <a href="{% url 'question_create' %}">질문 만들기</a>
+</div>
+<div class="contents">
+    <form action="/choices/{{user_id}}/?page=1" method="POST">
+        {% csrf_token%}
+        <button name="test2" value="1">시작하기</button>
+    </form>
+</div>
+{% endblock content %}
