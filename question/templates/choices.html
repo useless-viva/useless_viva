@@ -36,11 +36,11 @@
                 {% csrf_token %}
                 <div class="questions">
                     <div class="q btn2">
-                        <div class="in">
-                            <button name="test2" value="1"><span>{{question.answer1}}</span></button><br>
-                        </div>
                         <div class="moo">
                             <button name="test2" value="1"><img class="icon" src="{% static 'image/moo.png' %}" width="55px" height="55px"></button>
+                        </div>
+                        <div class="in">
+                            <button name="test2" value="1"><span>{{question.answer1}}</span></button><br>
                         </div>
                     </div>
                 </div>
@@ -49,21 +49,22 @@
                 </div>
                 <div class="questions">
                     <div class="q btn2">
-                        <div class="in">
-                            <button name="test2" value="2"><span>{{question.answer2}}</span></button><br>
-                        </div>
                         <div class="moo">
                             <button name="test2" value="2"><img class="icon" src="{% static 'image/moo.png' %}" width="55px" height="55px"></button>
+                        </div>
+                        <div class="in">
+                            <button name="test2" value="2"><span>{{question.answer2}}</span></button><br>
                         </div>
                     </div>
                 </div>
             </form>
-            {% else %}
+        </div>
+        {% else %}
+        <div class="box">
             <form action="javascript:link()" method="POST">
                 {% csrf_token %}
                 <div class="questions">
                     <div class="q btn2">
-
                         <div class="moo">
                             <button name="test2" value="1"><img class="icon" src="{% static 'image/moo.png' %}" width="55px" height="55px"></button>
                         </div>
@@ -74,7 +75,6 @@
                 </div>
                 <div class="questions">
                     <div class="q btn2">
-
                         <div class="moo">
                             <a name="test2" value="2"><img class="icon" src="{% static 'image/moo.png' %}" width="55px" height="55px"></a>
                         </div>
@@ -84,15 +84,15 @@
                     </div>
                 </div>
             </form>
-            <div id="result_page">
-                <a href="/results/{{user_id}}">
-                    <button id="result">결과보러 가기</button>
-                </a>
-            </div>
-            {% endif %}
-            {% endfor %}
-            <!-- <p>{{questions.number}}/{{questions.paginator.num_pages}}</p> -->
         </div>
+        <div id="result_page">
+            <a href="/results/{{user_id}}">
+                <button id="result">결과보러 가기</button>
+            </a>
+        </div>
+        {% endif %}
+        {% endfor %}
+            <!-- <p>{{questions.number}}/{{questions.paginator.num_pages}}</p> -->
     </div>
 </div>
 <div class="remainder">
