@@ -5,15 +5,17 @@
     function Popup() { window.open("popup.html",  "a", "width=80, height=50, left=0, top=190, location=no,history=no,resizable=no,status=no,scrollbars=no,menubar=no,toolbar=no"); }
 </script>
 {% endblock javascript %}
+{% block css %}{% static 'css/home.css' %}{% endblock css%}
 {% block title %}Home{% endblock title %}
 {% block popup %}onload="javascript:Popup()"{% endblock popup %}
 {% block content %}
 <div class="main">
-    <img class="content" src="logo/main.png">
+    <img class="content" src="{% static 'image/main.png' %}">
     <div class="go_button">
         <a href="question1.html"><span class="go btn2">추천 받으러 가기</span></a>
     </div>
 </div>
+{% endblock content %}
 <div class="header">
     <a href="{% url 'home' %}"><strong>홈 화면</strong></a>
     <a href="{% url 'question_create' %}">질문 만들기</a>
@@ -24,4 +26,3 @@
         <button name="test2" value="1">시작하기</button>
     </form>
 </div>
-{% endblock content %}

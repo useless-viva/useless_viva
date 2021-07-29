@@ -39,6 +39,7 @@ html, body {
     margin-bottom: 50px;
 }
 .btn2:hover { box-shadow:0 8px 20px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(250, 168, 92, 0.336); }
+
 .container {
     height: 100%;
 }
