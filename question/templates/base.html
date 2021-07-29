@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block javasript %}{% endblock javasript %}
+    <link rel="stylesheet" href="{% block css %}{% endblock css %}">
+    <title>{% block title %}{% endblock title %}</title>
+</head>
+<body {% block popup %}{% endblock popup %}>
+    <div class="container">
+        <div class="header">
+            <a href="home.html"><img id="logo" src="logo/logo.png" height="115px" width="110px"></a>
+            <div class="viva"><a href="home.html"><img src="logo/viva.png" width="340px" height="70px"></a></div>
+            <a href="home.html"><img id="present" src="logo/present.png"></a>
+        </div>
+
+        {% block content %}
+        {% endblock content %}
+
+        <div class="footer">
+            <div class="footer_box">
+                <a href="home.html"><img src="logo/viva.png" width="200px"></a>
+                <h3>Developers : </h3>
+                <p>Front-End :: [윤현지 - github.com/Younhyeonji]  [이민수 - github.com/mslee5240]</p>
+                <p>Back-End :: [정은서 - github.com/eunseoJeong]  [배연주 - github.com/kiteB]</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
