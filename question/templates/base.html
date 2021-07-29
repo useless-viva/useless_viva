@@ -12,9 +12,9 @@
 <body {% block popup %}{% endblock popup %}>
     <div class="container">
         <div class="header">
-            <a href="home.html"><img id="logo" src="{% static 'image/logo.png' %}" height="115px" width="110px"></a>
-            <div class="viva"><a href="home.html"><img src="{% static 'image/viva.png' %}" width="340px" height="70px"></a></div>
-            <a href="home.html"><img id="present" src="{% static 'image/present.png' %}"></a>
+            <a href="{%url 'home'%}"><img id="logo" src="{% static 'image/logo.png' %}" height="115px" width="110px"></a>
+            <div class="viva"><a href="{%url 'home'%}"><img src="{% static 'image/viva.png' %}" width="340px" height="70px"></a></div>
+            <a href="{%url 'sok'%}"><img id="present" src="{% static 'image/present.png' %}"></a>
         </div>
 
         {% block content %}
@@ -22,7 +22,7 @@
 
         <div class="footer">
             <div class="footer_box">
-                <a href="home.html"><img src="{% static 'image/viva.png' %}" width="200px"></a>
+                <a href="{%url 'home'%}"><img src="{% static 'image/viva.png' %}" width="200px"></a>
                 <h3>Developers : </h3>
                 <p>Front-End :: [윤현지 - github.com/Younhyeonji]  [이민수 - github.com/mslee5240]</p>
                 <p>Back-End :: [정은서 - github.com/eunseoJeong]  [배연주 - github.com/kiteB]</p>
