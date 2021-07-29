@@ -100,7 +100,7 @@ html, body {
     color: red;
     border: 3px solid #FF9D00;
     background-color: #fde351;
-    padding: 20px;
+    padding: 20px 10px;
     padding-left: 45px;
     padding-right: 45px;
     transform: rotate(-55deg);
@@ -133,9 +133,8 @@ form {
 
 .q {
     display: flex;
-    flex-direction: column-reverse;
-    /* align-items: center; */
-    justify-content: flex-end;
+    flex-direction: column;
+    justify-content: flex-start;
     border: 5px solid #FF9D00;
     border-radius: 40px;
     background-color: #FFFFFF;
@@ -155,9 +154,9 @@ form {
     display: flex;
     justify-content: center;
     font-family: 'GongGothicLight';
-    font-size: 30px;
+    font-size: 28px;
     text-align: center;
-    padding: 16px;
+    padding: 14px;
 }
 
 .moo {
@@ -221,4 +220,56 @@ button {
 }
 #result_page {
     display: none;
+}
+.wrap {
+    display: flex;
+    justify-content: center;
+    /* flex-direction: column; */
+    align-items: center;
+    margin-top: 350px;
+}
+.result-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #FF9D00;
+    background-color: #f8e65e;
+    width: 600px;
+    height: 370px;
+    margin-right: 400px;
+}
+.ddu {
+    display: flex;
+    justify-content: center;
+    font-family: '국립박물관문화재단클래식B';
+    font-size: 42px;
+    color: red;
+    border: 3px solid #FF9D00;
+    background-color: #fde351;
+    width: 500px;
+    height: 50px;
+    margin-bottom: 100px;
+    transform: rotate(-55deg);
+}
+#result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid #FF9D00;
+    border-radius: 40px;
+    background-color: #FFFFFF;
+    width: 200px;
+    height: 200px;
+    padding-top: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    margin-left: 35px;
+    margin-right: 35px;
+    margin-top:-20px;
+    cursor: pointer;
+}
+#result button {
+    background-color: transparent;;
 }

@@ -1,103 +1,129 @@
-{% extends 'base.html' %}
 {% load static %}
-{% block javascript %}
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script src="http://code.jquery.com/jquery-latest.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-<script>
-    function link() {
-        setTimeout(function() {
-            location.href="/choices/{{user_id}}/?page={{questions.number}}";
-        }, 2000);
-    }
-</script>  
-<script type="text/javascript" src="/static/js/test.js"></script>
-<script type="text/javascript" src="/static/js/test2.js"></script>
-{% endblock javascript %}
-{% block css %}{% static '/css/question.css' %}{% endblock css%}
-{% block title %}Question{% endblock title %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/question.css">
+    <link rel="stylesheet" href="/static/css/home.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <title>question</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="{%url 'home'%}"><img id="logo" src="{% static 'image/logo.png' %}" height="115px" width="110px"></a>
+            <div class="viva"><a href="{%url 'home'%}"><img src="{% static 'image/viva.png' %}" width="340px" height="70px"></a></div>
+            <a href="{%url 'sok'%}"><img id="present" src="{% static 'image/present.png' %}"></a>
+        </div>
+        <div class="main">
+            {% for question in questions %}
+            <div class="num">
+                <span class="number">{{question.id}}</span>
+            </div>
+            <div class="que">
+                <span class="question">{{question.que}}</span>
+            </div>
+            <div class="ques">
+                <div class="box_ddu">
+                    <span class="ddu_text">쓸모없는 선물 추천</span>
+                </div>
+                {% if questions.has_next %}
+                <div class="box">
+                    <form action="/choices/{{user_id}}/?page={{questions.next_page_number}}" method="POST">
+                        {% csrf_token %}
+                        <div class="questions">
+                            <div class="q btn2">
+                                <div class="moo">
+                                    <button name="test2" value="1"><img class="icon" src="{% static 'image/moo.png' %}" width="55px" height="55px"></button>
+                                </div>
+                                <div class="in">
+                                    <button name="test2" value="1"><span>{{question.answer1}}</span></button><br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sun">
+                            <span> </span>
+                        </div>
+                        <div class="questions">
+                            <div class="q btn2">
+                                <div class="moo">
+                                    <button name="test2" value="2"><img class="icon" src="{% static 'image/moo.png' %}" width="55px" height="55px"></button>
+                                </div>
+                                <div class="in">
+                                    <button name="test2" value="2"><span>{{question.answer2}}</span></button><br>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                {% else %}
+                <div class="box">
+                    <!-- <form action="javascript:link()" method="POST"> -->
+                    <form action="/choices/{{user_id}}/?page={{questions.number}}" method="POST">
+                        {% csrf_token %}
+                        <div class="questions">
+                            <div class="q btn2">
+                                <div class="moo">
+                                    <button id="answer-btn1" name="test2" value="1"><img class="icon" src="{% static 'image/moo.png' %}" width="55px" height="55px"></button>
+                                </div>
+                                <div class="in">
+                                    <button id="answer-btn2" name="test2" value="1"><span>{{question.answer1}}</span></button><br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sun">
+                            <span> </span>
+                        </div>
+                        <div class="questions">
+                            <div class="q btn2">
+                                <div class="moo">
+                                    <a id="answer-btn3" name="test2" value="2"><img class="icon" src="{% static 'image/moo.png' %}" width="55px" height="55px"></a>
+                                </div>
+                                <div class="in">
+                                    <a id="answer-btn4" name="test2" value="2"><span>{{question.answer2}}</span></a><br>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div id="result_page">
+                    <div class="wrap">
+                        <div class="result-ddu">
+                            <span class="ddu">쓸모없는 선물 추천</span>
+                        </div>
+                        <div class="result-box">
+                            <a href="/results/{{user_id}}">
+                                <div id="result">
+                                    <img class="icon" src="{% static 'image/moo.png' %}" width="55px" height="55px">
+                                    <button>결과 확인하러 가기</button>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+        <div class="remainder">
+            <p id="page_info">{{questions.number}}/{{questions.paginator.num_pages}}</p>    
+        </div>
 
-{% block content %}
-<div class="main">
-    {% for question in questions %}
-    <div class="num">
-        <span class="number">{{question.id}}</span>
-    </div>
-    <div class="que">
-        <span class="question">{{question.que}}</span>
-    </div>
-    <div class="ques">
-        <div class="box_ddu">
-            <span class="ddu_text">쓸모없는 선물 추천</span>
+        <div class="footer">
+            <div class="footer_box">
+                <a href="{%url 'home'%}"><img src="{% static 'image/viva.png' %}" width="200px"></a>
+                <h3>Developers : </h3>
+                <p>Front-End :: [윤현지 - github.com/Younhyeonji]  [이민수 - github.com/mslee5240]</p>
+                <p>Back-End :: [정은서 - github.com/eunseoJeong]  [배연주 - github.com/kiteB]</p>
+            </div>
         </div>
-        {% if questions.has_next %}
-        <div class="box">
-            <form action="/choices/{{user_id}}/?page={{questions.next_page_number}}" method="POST">
-                {% csrf_token %}
-                <div class="questions">
-                    <div class="q btn2">
-                        <div class="moo">
-                            <button name="test2" value="1"><img class="icon" src="{% static 'image/moo.png' %}" width="55px" height="55px"></button>
-                        </div>
-                        <div class="in">
-                            <button name="test2" value="1"><span>{{question.answer1}}</span></button><br>
-                        </div>
-                    </div>
-                </div>
-                <div class="sun">
-                    <span> </span>
-                </div>
-                <div class="questions">
-                    <div class="q btn2">
-                        <div class="moo">
-                            <button name="test2" value="2"><img class="icon" src="{% static 'image/moo.png' %}" width="55px" height="55px"></button>
-                        </div>
-                        <div class="in">
-                            <button name="test2" value="2"><span>{{question.answer2}}</span></button><br>
-                        </div>
-                    </div>
-                </div>
-            </form>
-        </div>
-        {% else %}
-        <div class="box">
-            <form action="javascript:link()" method="POST">
-                {% csrf_token %}
-                <div class="questions">
-                    <div class="q btn2">
-                        <div class="moo">
-                            <button name="test2" value="1"><img class="icon" src="{% static 'image/moo.png' %}" width="55px" height="55px"></button>
-                        </div>
-                        <div class="in">
-                            <button name="test2" value="1"><span>{{question.answer1}}</span></button><br>
-                        </div>
-                    </div>
-                </div>
-                <div class="questions">
-                    <div class="q btn2">
-                        <div class="moo">
-                            <a name="test2" value="2"><img class="icon" src="{% static 'image/moo.png' %}" width="55px" height="55px"></a>
-                        </div>
-                        <div class="in">
-                            <a name="test2" value="2"><span>{{question.answer2}}</span></a><br>
-                        </div>
-                    </div>
-                </div>
-            </form>
-        </div>
-        <div id="result_page">
-            <a href="/results/{{user_id}}">
-                <button id="result">결과보러 가기</button>
-            </a>
-        </div>
-        {% endif %}
-        {% endfor %}
-            <!-- <p>{{questions.number}}/{{questions.paginator.num_pages}}</p> -->
-    </div>
-</div>
-<div class="remainder">
-    <!-- <span class="much">선물을 추천 받기까지 11문항이 남았습니다</span> -->
-    <p>{{questions.number}}/{{questions.paginator.num_pages}}</p>    
-</div>
-{% endblock content %}
+
+    <script type="text/javascript" src="/static/js/test.js"></script>
+    <script type="text/javascript" src="/static/js/test2.js"></script>
+    <script type="text/javascript" src="/static/js/test3.js"></script>
+</body>
 </html>

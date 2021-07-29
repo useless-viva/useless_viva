@@ -100,7 +100,7 @@ html, body {
     color: red;
     border: 3px solid #FF9D00;
     background-color: #fde351;
-    padding: 20px;
+    padding: 20px 10px;
     padding-left: 45px;
     padding-right: 45px;
     transform: rotate(-55deg);
@@ -120,7 +120,9 @@ html, body {
     width: 850px;
     height: 370px;
 }
-
+form {
+    display: flex;
+}
 .questions {
     display: flex;
     justify-content: space-around;
@@ -130,6 +132,9 @@ html, body {
 }
 
 .q {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     border: 5px solid #FF9D00;
     border-radius: 40px;
     background-color: #FFFFFF;
@@ -149,14 +154,15 @@ html, body {
     display: flex;
     justify-content: center;
     font-family: 'GongGothicLight';
-    font-size: 32px;
+    font-size: 28px;
     text-align: center;
-    padding: 30px;
+    padding: 14px;
 }
 
 .moo {
     display: flex;
     justify-content: center;
+    margin-top: 20px;
 }
 
 .sun {
@@ -173,7 +179,9 @@ html, body {
     height: 85px;
     display: flex;
     justify-content: space-around;
+    font-family: 'GongGothicLight';
     padding-top: 35px;
+    font-size: 38px;
 }
 
 .much {
@@ -202,4 +210,66 @@ html, body {
     flex-direction: column;
     text-align: center;
     justify-content: center;
+}
+button {
+    border: 0;
+    outline: 0;
+    background-color: white;
+    font-family: 'GongGothicLight';
+    font-size: 32px;
+}
+#result_page {
+    display: none;
+}
+.wrap {
+    display: flex;
+    justify-content: center;
+    /* flex-direction: column; */
+    align-items: center;
+    margin-top: 350px;
+}
+.result-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #FF9D00;
+    background-color: #f8e65e;
+    width: 600px;
+    height: 370px;
+    margin-right: 400px;
+}
+.ddu {
+    display: flex;
+    justify-content: center;
+    font-family: '국립박물관문화재단클래식B';
+    font-size: 42px;
+    color: red;
+    border: 3px solid #FF9D00;
+    background-color: #fde351;
+    width: 500px;
+    height: 50px;
+    margin-bottom: 100px;
+    transform: rotate(-55deg);
+}
+#result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid #FF9D00;
+    border-radius: 40px;
+    background-color: #FFFFFF;
+    width: 200px;
+    height: 200px;
+    padding-top: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    margin-left: 35px;
+    margin-right: 35px;
+    margin-top:-20px;
+    cursor: pointer;
+}
+#result button {
+    background-color: transparent;;
 }
