@@ -144,3 +144,12 @@ def results(request, pk):
 
 def popup(request):
     return render(request, 'popup.html')
+
+def gomin(request):
+    return render(request, 'gomin.html')
+
+def han(request):
+    return render(request, 'han.html')
+
+def sok(request):
+    return render(request, 'sok.html')
