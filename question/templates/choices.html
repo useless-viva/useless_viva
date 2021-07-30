@@ -41,7 +41,7 @@
                                     <button name="test2" value="1"><img class="icon" src="{% static 'image/moo.png' %}" width="55px" height="55px"></button>
                                 </div>
                                 <div class="in">
-                                    <button name="test2" value="1"><span>{{question.answer1}}</span></button><br>
+                                    <button name="test2" value="1" class = "ans"><span>{{question.answer1|linebreaksbr}}</span></button><br>
                                 </div>
                             </div>
                         </div>
@@ -54,7 +54,7 @@
                                     <button name="test2" value="2"><img class="icon" src="{% static 'image/moo.png' %}" width="55px" height="55px"></button>
                                 </div>
                                 <div class="in">
-                                    <button name="test2" value="2"><span>{{question.answer2}}</span></button><br>
+                                    <button name="test2" value="2" class = "ans"><span>{{question.answer2|linebreaksbr}}</span></button><br>
                                 </div>
                             </div>
                         </div>
@@ -70,7 +70,7 @@
                                     <button id="answer-btn1" name="test2" value="1"><img class="icon" src="{% static 'image/moo.png' %}" width="55px" height="55px"></button>
                                 </div>
                                 <div class="in">
-                                    <button id="answer-btn2" name="test2" value="1"><span>{{question.answer1}}</span></button><br>
+                                    <button id="answer-btn2" name="test2" value="1" class = "ans"><span>{{question.answer1|linebreaksbr}}</span></button><br>
                                 </div>
                             </div>
                         </div>
@@ -83,7 +83,7 @@
                                     <button id="answer-btn3" name="test2" value="2"><img class="icon" src="{% static 'image/moo.png' %}" width="55px" height="55px"></button>
                                 </div>
                                 <div class="in">
-                                    <button id="answer-btn4" name="test2" value="2"><span>{{question.answer2}}</span></button><br>
+                                    <button id="answer-btn4" name="test2" value="2" class = "ans"><span>{{question.answer2|linebreaksbr}}</span></button><br>
                                 </div>
                             </div>
                         </div>

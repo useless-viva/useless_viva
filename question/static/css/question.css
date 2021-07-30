@@ -260,3 +260,7 @@ cursor: pointer;}
 button span:hover {
     cursor: pointer;
 }
+
+.ans {
+    font-size: 27px;
+}

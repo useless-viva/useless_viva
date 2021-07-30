@@ -101,8 +101,6 @@ a {
     height: 100%;
     background-color: black;
     color: white;
-    /* border: white solid 3px; */
-    /* margin: 20px; */
     padding: 10px;
     display: flex;
     flex-direction: column;
