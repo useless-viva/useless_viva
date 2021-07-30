@@ -62,8 +62,8 @@
                 </div>
                 {% else %}
                 <div class="box">
-                    <!-- <form action="javascript:link()" method="POST"> -->
-                    <form action="/choices/{{user_id}}/?page={{questions.number}}" method="POST">
+                    <form action="javascript:link()" method="POST">
+                    <!-- <form action="/choices/{{user_id}}/?page={{questions.number}}" method="POST"> -->
                         {% csrf_token %}
                         <div class="questions">
                             <div class="q btn2">
@@ -91,19 +91,13 @@
                     </form>
                 </div>
                 <div id="result_page">
-                    <div class="wrap">
-                        <div class="result-ddu">
-                            <span class="ddu">쓸모없는 선물 추천</span>
+                    <img id="result-box" class="icon" src="{% static 'image/result.png' %}" width="1400px" height="650px">
+                    <a href="/results/{{user_id}}">
+                        <div id="result">
+                            <img class="icon" src="{% static 'image/moo.png'%}"  width="55px" height="55px">
+                            <button>결과 확인하러 가기</button>
                         </div>
-                        <div class="result-box">
-                            <a href="/results/{{user_id}}">
-                                <div id="result">
-                                    <img class="icon" src="{% static 'image/moo.png' %}" width="55px" height="55px">
-                                    <button>결과 확인하러 가기</button>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
+                    </a>
                 </div>
                 {% endif %}
                 {% endfor %}

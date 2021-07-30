@@ -106,15 +106,15 @@ html, body {
     transform: rotate(-55deg);
     width: 400px;
     height: 50px;
-    margin-top: 138px;
+    margin-top: 110px;
     margin-right: -120px;
 }
 
 .box {
     display: flex;
     justify-content: space-between;
-    margin-right: 25%;
-    margin-top: 40px;
+    margin-right: 19%;
+    margin-top: 10px;
     border: 3px solid #FF9D00;
     background-color: #f8e65e;
     width: 850px;
@@ -192,7 +192,6 @@ form {
 /* 푸터 */
 
 .footer {
-    margin-top: 20px;
     text-align: center;
     display: flex;
     justify-content: center;
@@ -203,10 +202,8 @@ form {
     height: 100%;
     background-color: black;
     color: white;
-    border: white solid 3px;
-    margin: 20px;
-    padding: 10px;
     display: flex;
+    padding: 10px;
     flex-direction: column;
     text-align: center;
     justify-content: center;
@@ -221,38 +218,15 @@ button {
 #result_page {
     display: none;
 }
-.wrap {
-    display: flex;
-    justify-content: center;
-    /* flex-direction: column; */
-    align-items: center;
-    margin-top: 350px;
-}
-.result-box {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 3px solid #FF9D00;
-    background-color: #f8e65e;
-    width: 600px;
-    height: 370px;
-    margin-right: 400px;
-}
-.ddu {
-    display: flex;
-    justify-content: center;
-    font-family: '국립박물관문화재단클래식B';
-    font-size: 42px;
-    color: red;
-    border: 3px solid #FF9D00;
-    background-color: #fde351;
-    width: 500px;
-    height: 50px;
-    margin-bottom: 100px;
-    transform: rotate(-55deg);
+#result-box {
+    margin-top: 53px;
+    margin-right: 76px;
 }
 #result {
     display: flex;
+    position: relative;
+    bottom: 280px;
+    left: 580px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -271,5 +245,18 @@ button {
     cursor: pointer;
 }
 #result button {
-    background-color: transparent;;
+    margin-top: 20px;
+    background-color: transparent;
+}
+
+.btn2:hover 
+{ box-shadow:0 8px 20px 0 rgba(0,0,0,0.2), 0 10px 20px 0 rgba(250, 168, 92, 0.336); 
+cursor: pointer;}
+
+.icon:hover {
+    cursor: pointer;
+}
+
+button span:hover {
+    cursor: pointer;
 }

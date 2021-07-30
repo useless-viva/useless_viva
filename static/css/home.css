@@ -89,20 +89,20 @@ a {
     color: #212121;
 }
 
-.footer {
+.footer_home {
     margin-top: 150px;
     text-align: center;
     display: flex;
     justify-content: center;
 }
 
-.footer_box {
+.footer_box_home {
     width: 100%;
     height: 100%;
     background-color: black;
     color: white;
-    border: white solid 3px;
-    margin: 20px;
+    /* border: white solid 3px; */
+    /* margin: 20px; */
     padding: 10px;
     display: flex;
     flex-direction: column;
