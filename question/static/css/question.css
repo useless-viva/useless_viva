@@ -203,6 +203,7 @@ form {
     background-color: black;
     color: white;
     display: flex;
+    padding: 10px;
     flex-direction: column;
     text-align: center;
     justify-content: center;
@@ -217,38 +218,15 @@ button {
 #result_page {
     display: none;
 }
-.wrap {
-    display: flex;
-    justify-content: center;
-    /* flex-direction: column; */
-    align-items: center;
-    margin-top: 350px;
-}
-.result-box {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 3px solid #FF9D00;
-    background-color: #f8e65e;
-    width: 600px;
-    height: 370px;
-    margin-right: 400px;
-}
-.ddu {
-    display: flex;
-    justify-content: center;
-    font-family: '국립박물관문화재단클래식B';
-    font-size: 42px;
-    color: red;
-    border: 3px solid #FF9D00;
-    background-color: #fde351;
-    width: 500px;
-    height: 50px;
-    margin-bottom: 100px;
-    transform: rotate(-55deg);
+#result-box {
+    margin-top: 53px;
+    margin-right: 76px;
 }
 #result {
     display: flex;
+    position: relative;
+    bottom: 280px;
+    left: 580px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -267,7 +245,8 @@ button {
     cursor: pointer;
 }
 #result button {
-    background-color: transparent;;
+    margin-top: 20px;
+    background-color: transparent;
 }
 
 .btn2:hover 
