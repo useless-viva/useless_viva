@@ -264,3 +264,11 @@ button span:hover {
 .ans {
     font-size: 27px;
 }
+
+#result_page:hover {
+    cursor: pointer;
+}
+
+#result button:hover {
+    cursor: pointer;
+}
