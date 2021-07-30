@@ -63,7 +63,6 @@
                 {% else %}
                 <div class="box">
                     <form action="javascript:link()" method="POST">
-                    <!-- <form action="/choices/{{user_id}}/?page={{questions.number}}" method="POST"> -->
                         {% csrf_token %}
                         <div class="questions">
                             <div class="q btn2">
@@ -81,10 +80,10 @@
                         <div class="questions">
                             <div class="q btn2">
                                 <div class="moo">
-                                    <a id="answer-btn3" name="test2" value="2"><img class="icon" src="{% static 'image/moo.png' %}" width="55px" height="55px"></a>
+                                    <button id="answer-btn3" name="test2" value="2"><img class="icon" src="{% static 'image/moo.png' %}" width="55px" height="55px"></button>
                                 </div>
                                 <div class="in">
-                                    <a id="answer-btn4" name="test2" value="2"><span>{{question.answer2}}</span></a><br>
+                                    <button id="answer-btn4" name="test2" value="2"><span>{{question.answer2}}</span></button><br>
                                 </div>
                             </div>
                         </div>
@@ -119,5 +118,7 @@
     <script type="text/javascript" src="/static/js/test.js"></script>
     <script type="text/javascript" src="/static/js/test2.js"></script>
     <script type="text/javascript" src="/static/js/test3.js"></script>
+    <script type="text/javascript" src="/static/js/test4.js"></script>
+    <script type="text/javascript" src="/static/js/result.js"></script>
 </body>
 </html>

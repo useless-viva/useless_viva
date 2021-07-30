@@ -1,5 +1,5 @@
-$("#answer-btn3").click(function () {
-    // #result_page의 display가 "none"일 경우 (접혀있는 경우)
+$("#answer-btn4").click(function () {
+    // #result의 display가 "none"일 경우 (접혀있는 경우)
     if ($("#result_page").css("display") == "none") {
         // 감추기
         $(".num").hide();
