@@ -53,13 +53,13 @@ https://www.notion.so/18b6657aabea493183552750c75df654
 - JavaScript
 <br>
 
-## ✔ Django UML
+## 🌱 Django UML
 ![useless-viva](https://user-images.githubusercontent.com/80669355/127758283-ed7538b2-b2d2-40b8-af81-49e3e0368d0d.png)
 
-## ✅ 프로젝트 실행법
+## ✔ 프로젝트 실행법
 1. 가상환경 생성 및 실행
 - `python -m venv (가상환경 이름)`
-- `source (가상환경 이름)/Scripts/activate` (for Windows) / `source (가상환경이름)/bin/activate` (for OS X/Linux)
+- (Windows)`source (가상환경 이름)/Scripts/activate` or (OS X/Linux)`source (가상환경이름)/bin/activate` 
 
 2. Django 설치
 - `pip install django`
@@ -67,7 +67,7 @@ https://www.notion.so/18b6657aabea493183552750c75df654
 3. PIL(Python Image Library) 설치
 - `pip install pillow`
 
-4. 모델 생성/DB 작업 파일 및 테이블 생성 
+4. 모델 생성
 - `python manage.py makemigrations`
 - `python manage.py migrate`
 
