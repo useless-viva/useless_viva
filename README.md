@@ -1,7 +1,5 @@
-# useless_viva
+# 무쓸모야호(useless_viva)
 <img src="https://user-images.githubusercontent.com/80669355/127757851-74b877b8-a014-4b89-8d31-c1dc1a0728c8.png" width="200px;">
-
-무쓸모야호(useless_viva)
 <br>
 
 ## 📌 무쓸모야호 사이트
