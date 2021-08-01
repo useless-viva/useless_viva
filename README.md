@@ -9,7 +9,7 @@ http://mslee5240.pythonanywhere.com/
 ### 📖 프로젝트 노션
 https://www.notion.so/18b6657aabea493183552750c75df654
 <br>
-
+<br>
 ## 👩🏻‍🏫 프로젝트 소개
 - 멋쟁이사자처럼 SCH 9기 ㅁㅆㅁㅌ
 - 간단한 테스트 13개를 통해 자신에게 맞는 쓸모없는 선물을 추천해주는 웹 서비스
