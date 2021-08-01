@@ -2,11 +2,11 @@
 <img src="https://user-images.githubusercontent.com/80669355/127757851-74b877b8-a014-4b89-8d31-c1dc1a0728c8.png" width="300px;">
 <br>
 
-## 📌 무쓸모야호 사이트
+### 📌 무쓸모야호 사이트
 http://mslee5240.pythonanywhere.com/
 <br>
 
-## 📖 프로젝트 노션
+### 📖 프로젝트 노션
 https://www.notion.so/18b6657aabea493183552750c75df654
 <br>
 
