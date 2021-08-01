@@ -59,7 +59,8 @@ https://www.notion.so/18b6657aabea493183552750c75df654
 ## ✔ 프로젝트 실행법
 1. 가상환경 생성 및 실행
 - `python -m venv (가상환경 이름)`
-- (Windows)`source (가상환경 이름)/Scripts/activate` or (OS X/Linux)`source (가상환경이름)/bin/activate` 
+- (Windows) `source (가상환경 이름)/Scripts/activate` or 
+  (OS X/Linux) `source (가상환경이름)/bin/activate` 
 
 2. Django 설치
 - `pip install django`
